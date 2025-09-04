@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+// export const prerender = true; // indica que aunque el output este en modo servidor, esta pagina seguira siendo estatica
 ---
 
 <Layout>
@@ -9,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
         <h1>Buscador IP</h1>
         <div>
           <svg
+            class="icon-map"
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -30,7 +32,7 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <input
         class="input"
-        type="text"
+        type="search"
         placeholder="Ingresa aquí tu IP"
         required
       />
@@ -51,6 +53,14 @@ import Layout from "../layouts/Layout.astro";
     margin: 0 auto;
   }
 
+  .input:focus {
+    outline: 0.5px solid #2564ebdf;
+  }
+  .button {
+    background-color: #2564ebdf;
+    border: none;
+  }
+
   .container-header {
     display: flex;
     align-items: center;
@@ -60,7 +70,7 @@ import Layout from "../layouts/Layout.astro";
     height: 100%;
   }
 
-  svg {
+  .icon-map {
     margin-bottom: 18px;
   }
   .label {
