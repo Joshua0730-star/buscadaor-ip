@@ -7,34 +7,39 @@ import Layout from "../layouts/Layout.astro";
   <form action="" class="form">
     <label class="label">
       <div class="container-header">
-        <h1>Buscador IP</h1>
-        <div>
-          <svg
-            class="icon-map"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-google-maps"
-            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-              d="M12 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
-            ></path><path d="M6.428 12.494l7.314 -9.252"></path><path
-              d="M10.002 7.935l-2.937 -2.545"></path><path
-              d="M17.693 6.593l-8.336 9.979"></path><path
-              d="M17.591 6.376c.472 .907 .715 1.914 .709 2.935a7.263 7.263 0 0 1 -.72 3.18a19.085 19.085 0 0 1 -2.089 3c-.784 .933 -1.49 1.93 -2.11 2.98c-.314 .62 -.568 1.27 -.757 1.938c-.121 .36 -.277 .591 -.622 .591c-.315 0 -.463 -.136 -.626 -.593a10.595 10.595 0 0 0 -.779 -1.978a18.18 18.18 0 0 0 -1.423 -2.091c-.877 -1.184 -2.179 -2.535 -2.853 -4.071a7.077 7.077 0 0 1 -.621 -2.967a6.226 6.226 0 0 1 1.476 -4.055a6.25 6.25 0 0 1 4.811 -2.245a6.462 6.462 0 0 1 1.918 .284a6.255 6.255 0 0 1 3.686 3.092z"
-            ></path></svg
-          >
+        <div class="container-h1">
+          <h1>Buscador IP</h1>
+          <div>
+            <svg
+              class="icon-map"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-google-maps"
+              ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                d="M12 9.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0"
+              ></path><path d="M6.428 12.494l7.314 -9.252"></path><path
+                d="M10.002 7.935l-2.937 -2.545"></path><path
+                d="M17.693 6.593l-8.336 9.979"></path><path
+                d="M17.591 6.376c.472 .907 .715 1.914 .709 2.935a7.263 7.263 0 0 1 -.72 3.18a19.085 19.085 0 0 1 -2.089 3c-.784 .933 -1.49 1.93 -2.11 2.98c-.314 .62 -.568 1.27 -.757 1.938c-.121 .36 -.277 .591 -.622 .591c-.315 0 -.463 -.136 -.626 -.593a10.595 10.595 0 0 0 -.779 -1.978a18.18 18.18 0 0 0 -1.423 -2.091c-.877 -1.184 -2.179 -2.535 -2.853 -4.071a7.077 7.077 0 0 1 -.621 -2.967a6.226 6.226 0 0 1 1.476 -4.055a6.25 6.25 0 0 1 4.811 -2.245a6.462 6.462 0 0 1 1.918 .284a6.255 6.255 0 0 1 3.686 3.092z"
+              ></path></svg
+            >
+          </div>
         </div>
+        <span class="text-center">inspirado en @midudev 💖</span>
       </div>
       <input
         class="input"
         type="search"
         placeholder="Ingresa aquí tu IP"
         required
+        pattern={"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"}
+        title="Debe ingersar una direccion IP válida⚠️!"
       />
       <small>Por ejemplo: 192.168.0.102</small>
       <button class="button" type="submit">Buscar información</button>
@@ -61,15 +66,23 @@ import Layout from "../layouts/Layout.astro";
     border: none;
   }
 
+  .container-header > span {
+    color: #3339;
+  }
   .container-header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    padding: 0.2rem 0.8rem;
 
-    gap: 0.5rem;
     width: 100%;
     height: 100%;
   }
 
+  .container-h1 {
+    display: flex;
+    align-items: center;
+  }
   .icon-map {
     margin-bottom: 18px;
   }
