@@ -133,7 +133,6 @@ import Layout from "../layouts/Layout.astro";
     try {
       const response = await fetch(url, OPTIONS);
 
-      console.log(response);
       if (!response.ok) throw new Error("Error en la peticion");
       $button?.removeAttribute("disabled");
       $button.innerHTML = "Buscar información";

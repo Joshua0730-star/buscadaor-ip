@@ -12,6 +12,7 @@ export default defineConfig({
   env: {
     schema: {
       API_KEY: envField.string({ access: "public", context: "client" }),
+      RAPID_API_KEY: envField.string({ access: "public", context: "client" }),
     },
   },
 });

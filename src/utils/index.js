@@ -4,6 +4,6 @@ export const OPTIONS = {
   method: "GET",
   headers: {
     "x-rapidapi-key": RAPID_API_KEY,
-    "x-rapidapi-host": "ip-geolocation-api6.p.rapidapi.com",
+    "x-rapidapi-host": "iplocate1.p.rapidapi.com",
   },
 };
