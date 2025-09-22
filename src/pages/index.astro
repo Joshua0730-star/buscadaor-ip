@@ -126,11 +126,12 @@ import Layout from "../layouts/Layout.astro";
 
     // Hacer una peticion a la api sobre la IP
 
-    const url = `https://ip-lookup-threat-detection-api.p.rapidapi.com/${value}`;
+    const url = `https://ip-geo-location10.p.rapidapi.com/ip?ip=${value}`;
 
     try {
       const response = await fetch(url, OPTIONS);
 
+      console.log(response);
       if (!response.ok) throw new Error("Error en la peticion");
       $button?.removeAttribute("disabled");
       $button.innerHTML = "Buscar información";
